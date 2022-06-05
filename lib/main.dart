@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:guidebook/router/router.dart';
 import 'package:guidebook/views/user_view.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       
         primarySwatch: Colors.blue,
       ),
-      home: const UserView(),
+     initialRoute: "/loader",
+      onGenerateRoute: Routes.instance.ongenerate,
     );
   }
 }
