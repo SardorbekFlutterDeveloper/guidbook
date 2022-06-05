@@ -6,13 +6,15 @@ class Routes {
   static final Routes _instance = Routes.init();
   static Routes get instance => _instance;
 
-  Route? ongenerate(RouteSettings settings) {
-    var args = settings.arguments;
-    switch (settings.name) {
-      case "/home":
+  Route? ongenerate(RouteSettings s) {
+    var args = s.arguments;
+    switch (s.name) {
+      case "/":
         return MaterialPageRoute(
-          builder: (_) => UserView(),
+          builder: (_) => const UserView(),
         );
     }
+    
+ 
   }
 }

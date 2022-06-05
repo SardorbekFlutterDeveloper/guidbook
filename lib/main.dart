@@ -1,22 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:guidebook/model/user_model.dart';
 import 'package:guidebook/router/router.dart';
-import 'package:guidebook/views/user_view.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(userAdapter());
+  Hive.registerAdapter(DataAdapter());
+  
+
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-      
         primarySwatch: Colors.blue,
       ),
-     initialRoute: "/loader",
+      initialRoute: "/",
       onGenerateRoute: Routes.instance.ongenerate,
     );
   }
