@@ -6,15 +6,16 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
   await Hive.initFlutter();
-  Hive.registerAdapter(userAdapter());
+  Hive.registerAdapter(UserModelAdapter ());
   Hive.registerAdapter(DataAdapter());
-  
 
+  await Hive.openBox<UserModel>('userssBox');
+  
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -11,7 +11,7 @@ class Routes {
     switch (s.name) {
       case "/":
         return MaterialPageRoute(
-          builder: (_) => const UserView(),
+          builder: (_) => UserView(),
         );
     }
     

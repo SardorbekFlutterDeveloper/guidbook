@@ -1,7 +1,7 @@
-
 import 'package:hive_flutter/hive_flutter.dart';
 
 part 'user_model.g.dart';
+
 @HiveType(typeId: 1)
 class UserModel {
 	List<Data>? data;
@@ -93,7 +93,7 @@ class Venue {
 	}
 
 	Map<String, dynamic> toJson() {
-		final Map<String, dynamic> data = Map<String, dynamic>();
+		final Map<String, dynamic> data = <String, dynamic>{};
 		return data;
 	}
 }

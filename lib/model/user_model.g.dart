@@ -6,7 +6,7 @@ part of 'user_model.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class userAdapter extends TypeAdapter<UserModel> {
+class UserModelAdapter extends TypeAdapter<UserModel> {
   @override
   final int typeId = 1;
 
@@ -35,7 +35,7 @@ class userAdapter extends TypeAdapter<UserModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is userAdapter &&
+      other is UserModelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -56,7 +56,7 @@ class DataAdapter extends TypeAdapter<Data> {
       endDate: fields[2] as String?,
       name: fields[3] as String?,
       icon: fields[4] as String?,
-      venue: fields[5] as dynamic,
+      venue: fields[5] as Venue?,
       objType: fields[6] as String?,
       loginRequired: fields[7] as bool?,
     );
